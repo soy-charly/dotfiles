@@ -16,7 +16,7 @@ Para instalar estos dotfiles en tu máquina, sigue estos pasos:
 
 1. Clona este repositorio en tu directorio home:
   ```sh
-  git clone https://github.com/tu-usuario/dotfiles.git ~/dotfiles
+  git clone https://github.com/soy-charly/dotfiles.git ~/dotfiles
   ```
 
 2. Navega al directorio del repositorio:
