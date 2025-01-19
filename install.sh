@@ -6,6 +6,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 # Archivos y directorios a enlazar
 declare -A FILES_TO_SYMLINK=(
     ["bash/.bashrc"]="$HOME/.bashrc"
+    ["bash/.bash_custom"]="$HOME/.bash_custom"
     ["starship/starship.toml"]="$HOME/.config/starship.toml"
     ["pwsh/Microsoft.PowerShell_profile.ps1"]="$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
     ["vscode/settings.json"]="$HOME/.config/Code/User/settings.json"
@@ -76,6 +77,14 @@ install_dependencies() {
         sudo snap install powershell --classic
     else
         echo "PowerShell ya está instalado."
+    fi
+
+    # Instalar Starship
+    if ! command -v starship >/dev/null 2>&1; then
+        echo "Instalando Starship..."
+        curl -sS https://starship.rs/install.sh | sh
+    else
+        echo "Starship ya está instalado."
     fi
 
     # Instalar otras herramientas
