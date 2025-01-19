@@ -5,10 +5,10 @@ Este repositorio contiene mis configuraciones personales para diversas aplicacio
 ## Contenido
 
 - **Bash**: Configuración para `bash` y `bashrc`.
-- **Vim**: Configuración para `vim` y `vimrc`.
-- **Tmux**: Configuración para `tmux` y `tmux.conf`.
+<!-- … -->- **Vim**: Configuración para `vim` y `vimrc`.
+<!-- … -->- **Tmux**: Configuración para `tmux` y `tmux.conf`.
 - **Git**: Configuración para `git` y `gitconfig`.
-- **Zsh**: Configuración para `zsh` y `zshrc`.
+<!-- … -->- **Zsh**: Configuración para `zsh` y `zshrc`.
 
 ## Instalación
 
