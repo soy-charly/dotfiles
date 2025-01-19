@@ -5,11 +5,17 @@ Este repositorio contiene mis configuraciones personales para diversas aplicacio
 ## Contenido
 
 - **Bash**: Configuración para `bash`.
+  
 - **PWSH**: Configuración para `powershell`.
+  
 - **VSCODE**:Configuración para `visual studio code`
+  
 <!-- - **Vim**: Configuración para `vim` y `vimrc`. -->
+
 <!-- - **Tmux**: Configuración para `tmux` y `tmux.conf`. -->
+
 - **Git**: Configuración para `git` y `gitconfig`.
+  
 <!-- - **Zsh**: Configuración para `zsh` y `zshrc`. -->
 
 ## Instalación
