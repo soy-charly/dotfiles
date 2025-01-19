@@ -1,0 +1,91 @@
+# ~/.config/starship.toml
+
+# --- General ---
+add_newline = true # Añade una nueva línea después de cada prompt
+
+# --- Prompt ---
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$python\
+$cmd_duration\
+$line_break\
+ $jobs\
+$battery\
+$status\
+$shell\
+$character"""
+
+# --- OS (Sistema Operativo) ---
+[os]
+style = "bold cyan"
+format = "[$symbol]($style) "
+disabled = false
+
+[os.symbols]
+Ubuntu = " "
+Arch = " "
+Windows = " "
+Pop = " "
+
+# --- Username (Nombre de usuario) ---
+[username]
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+# --- Hostname (Nombre del sistema) ---
+[hostname]
+ssh_only = false
+style = "bold yellow"
+format = "[$hostname]($style) "
+disabled = false
+
+# --- Directory (Directorio actual) ---
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "bold blue"
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " "
+
+# --- Git Branch (Rama de Git) ---
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+# --- Git Status (Estado de Git) ---
+[git_status]
+style = "bold red"
+format = "([$all_status]($style)) "
+
+# --- NodeJS ---
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "via [$symbol($version )]($style) "
+disabled = false
+
+# --- Python ---
+[python]
+symbol = " "
+style = "bold yellow"
+format = "via [$symbol($version )]($style) "
+python_binary = "python3"
+
+# --- Shell (PowerShell) ---
+[shell]
+disabled = false
+style = "bold green"
+format = "[$indicator]($style) "
+powershell_indicator = " pwsh"

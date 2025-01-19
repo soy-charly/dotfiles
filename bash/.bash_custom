@@ -1,0 +1,17 @@
+# Personal customizations for Bash
+
+# Bun setup
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# LM Studio CLI
+export PATH="$PATH:/home/charly/.cache/lm-studio/bin"
+
+# Initialize Starship prompt
+eval "$(starship init bash)"
+
+# Rust environment
+. "$HOME/.cargo/env"
+
+# Local environment variables
+. "$HOME/.local/bin/env"
