@@ -1,0 +1,49 @@
+# Tamaño y fuente
+[font]
+size = 12.0
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+
+# Colores (Ejemplo de tema Dracula)
+[colors]
+[colors.primary]
+background = "#282a36"
+foreground = "#f8f8f2"
+
+[colors.normal]
+black   = "#000000"
+red     = "#ff5555"
+green   = "#50fa7b"
+yellow  = "#f1fa8c"
+blue    = "#bd93f9"
+magenta = "#ff79c6"
+cyan    = "#8be9fd"
+white   = "#bbbbbb"
+
+# Opacidad de la ventana
+[window]
+opacity = 0.9  # Cambia entre 0.0 (completamente transparente) y 1.0 (opaco)
+
+# Shell predeterminada (PowerShell)
+[shell]
+program = "/snap/bin/pwsh" # Ruta a PowerShell en sistemas Linux
+args = ["--login"]
+
+# Atajos de teclado
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Alt"
+action = "SpawnNewInstance"
+
+[cursor]
+style = {shape = "Beam", blinking = 'On' } # Forma del cursor
+thickness = 0.2     # Grosor del cursor (para Beam/Underline)

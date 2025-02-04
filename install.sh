@@ -10,6 +10,7 @@ declare -A FILES_TO_SYMLINK=(
     ["starship/starship.toml"]="$HOME/.config/starship.toml"
     ["pwsh/Microsoft.PowerShell_profile.ps1"]="$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
     ["vscode/settings.json"]="$HOME/.config/Code/User/settings.json"
+    ["alacritty/alacritty.yml"]="$HOME/.config/alacritty/alacritty.yml"  # Agregar configuración de Alacritty
 )
 
 # Función para crear enlaces simbólicos
@@ -85,6 +86,21 @@ install_dependencies() {
         curl -sS https://starship.rs/install.sh | sh
     else
         echo "Starship ya está instalado."
+    fi
+
+    # Instalar Alacritty
+    if ! command -v alacritty >/dev/null 2>&1; then
+        echo "Instalando Alacritty..."
+        if command -v apt >/dev/null 2>&1; then
+            sudo apt install -y alacritty
+        elif command -v yay >/dev/null 2>&1; then
+            yay -S alacritty --noconfirm
+        else
+            echo "No se puede instalar Alacritty automáticamente. Instálalo manualmente."
+            exit 1
+        fi
+    else
+        echo "Alacritty ya está instalado."
     fi
 
     # Instalar otras herramientas
