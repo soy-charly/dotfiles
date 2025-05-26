@@ -1,0 +1,146 @@
+# Estructura general del prompt
+format = """
+$env_var$time$username$hostname$directory$git_branch$git_commit$git_state$git_status\
+$nodejs$python$rust$golang$java$php$docker_context$kubernetes$terraform$aws$cmd_duration\
+$status$line_break$character
+"""
+
+# ───────────────────────────────
+# PROMPT STYLE
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[V](bold yellow)"
+disabled = false
+
+[line_break]
+disabled = false
+
+# ───────────────────────────────
+# CONTEXTO DE USUARIO
+
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)@"
+show_always = true
+
+[hostname]
+ssh_only = true
+format = "[$hostname](bold yellow) "
+disabled = false
+
+# ───────────────────────────────
+# DIRECTORIO
+
+[directory]
+style = "cyan"
+read_only = "🔒"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+home_symbol = "~"
+
+# ───────────────────────────────
+# GIT
+
+[git_branch]
+symbol = " "
+style = "magenta"
+
+[git_commit]
+commit_hash_length = 7
+style = "green"
+only_detached = false
+tag_disabled = false
+format = "[\\($hash$tag\\)]($style) "
+
+[git_state]
+style = "yellow"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[git_status]
+style = "red"
+format = '([\[$all_status$ahead_behind\]]($style))'
+conflicted = "⚔️ "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = " "
+stashed = "📦 "
+modified = " "
+staged = "+${count}"
+renamed = "» "
+deleted = "✘ "
+
+# ───────────────────────────────
+# LENGUAJES Y ENTORNOS
+
+[nodejs]
+symbol = " "
+style = "bold green"
+
+[python]
+symbol = " "
+style = "blue"
+format = '[${symbol}${version}(\($virtualenv\))]($style) '
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+
+[golang]
+symbol = " "
+style = "cyan"
+
+[java]
+symbol = " "
+style = "red"
+
+[php]
+symbol = " "
+style = "yellow"
+
+[docker_context]
+symbol = "🐳 "
+style = "blue"
+
+[kubernetes]
+symbol = "⛵ "
+style = "purple"
+format = '[$symbol$context( \($namespace\))]($style) '
+
+[terraform]
+symbol = "💠 "
+style = "bold cyan"
+
+[aws]
+symbol = " "
+style = "yellow"
+format = '[$symbol$profile(\($region\))]($style) '
+
+# ───────────────────────────────
+# VARIOS
+
+[cmd_duration]
+min_time = 500
+format = "⏱ [$duration](bold yellow)"
+
+[status]
+style = "bold red"
+symbol = "🔴 "
+format = "[$symbol$status]($style) "
+
+[time]
+disabled = false
+format = "🕒 [$time]($style) "
+time_format = "%H:%M:%S"
+utc_time_offset = "local"
+style = "bold white"
+
+
+[env_var.STARSHIP_ENV]
+variable = "STARSHIP_ENV"
+format = "[ENV=$env_value]($style) "
+style = "bold dimmed white"

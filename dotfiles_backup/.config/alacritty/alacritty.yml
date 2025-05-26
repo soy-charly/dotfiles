@@ -1,0 +1,100 @@
+# ~/.config/alacritty/alacritty.yml
+
+# ╭─────────────────────────────╮
+# │          GENERAL            │
+# ╰─────────────────────────────╯
+env:
+  TERM: xterm-256color
+
+# ╭─────────────────────────────╮
+# │         FUENTE              │
+# ╰─────────────────────────────╯
+font:
+  normal:
+    family: "FiraCode Nerd Font"
+    style: Regular
+  bold:
+    family: "FiraCode Nerd Font"
+    style: Bold
+  italic:
+    family: "FiraCode Nerd Font"
+    style: Italic
+  size: 12.5
+
+# ╭─────────────────────────────╮
+# │       COLORES (TokyoNight) │
+# ╰─────────────────────────────╯
+colors:
+  primary:
+    background: '#1a1b26'
+    foreground: '#c0caf5'
+  normal:
+    black:   '#15161e'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan:    '#7dcfff'
+    white:   '#a9b1d6'
+  bright:
+    black:   '#414868'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan:    '#7dcfff'
+    white:   '#c0caf5'
+  cursor:
+    text: CellBackground
+    cursor: '#c0caf5'
+  selection:
+    text: CellForeground
+    background: '#33467c'
+
+# ╭─────────────────────────────╮
+# │         CURSOR              │
+# ╰─────────────────────────────╯
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.2
+
+# ╭─────────────────────────────╮
+# │         VENTANA             │
+# ╰─────────────────────────────╯
+window:
+  opacity: 0.95
+  decorations: full
+  dynamic_padding: true
+  padding:
+    x: 10
+    y: 10
+  startup_mode: Windowed
+
+# ╭─────────────────────────────╮
+# │         SCROLLBACK          │
+# ╰─────────────────────────────╯
+scrolling:
+  history: 10000
+  multiplier: 3
+
+# ╭─────────────────────────────╮
+# │         MOUSE               │
+# ╰─────────────────────────────╯
+mouse:
+  hide_when_typing: true
+
+# ╭─────────────────────────────╮
+# │     TECLAS Y BINDINGS       │
+# ╰─────────────────────────────╯
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Q, mods: Control|Shift, action: Quit }
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+
